@@ -2,6 +2,20 @@
 #include <iostream>
 
 
+MerkelMain::MerkelMain()
+{}
+
+void MerkelMain::init()
+{
+        int input;
+        while(true)
+        {
+                printMenu();
+                input = getUserOption();
+                processUserOption(input);
+        }
+}
+
  void MerkelMain::printMenu(){
         // 1 print help
         std::cout << "1: Print help" << std::endl;

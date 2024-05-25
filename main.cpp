@@ -2,97 +2,17 @@
 #include <string>
 #include <vector>
 #include "OrderBookEntry.h"
+#include "MerkelMain.h"
 
-void printMenu(){
-        // 1 print help
-        std::cout << "1: Print help" << std::endl;
-
-        // 2 print exchange stats
-        std::cout << "2: Print exchange stats" << std::endl;
-
-        // 3 make an offer
-        std::cout << "3: Make an offer" << std::endl;
-
-        // 4 make a bid
-        std::cout << "4: Make a bid" << std::endl;
-
-        // 5 print wallet
-        std::cout << "5: Print wallet" << std::endl;
-
-        // 6 continue
-        std::cout << "6: Continue" << std::endl;
-
-        // Select an option
-        std::cout << "=========== " << std::endl;
-}
-
-
-void printHelp(){
-   std::cout << "Help - choose options from the menu" << std::endl;
-   std::cout << "and follow the on screen instructions." << std::endl;
-}
-
-void printMarketStats(){
-        std::cout << "Market looks good" << std::endl;
-
-}
-
-void enterOffer(){
-        std::cout << "Make an offer - enter the amount" << std::endl;
-}
-
-void enterBid(){
-        std::cout << "Make a bid - enter the amount" << std::endl;
-
-}
-
-void printWallet (){
-        std::cout << "Your wallet is empty" << std::endl;
-
-}
-
-void goToNextTimeFrame (){
-        std::cout << "Going to next ime frame." << std::endl;
-}
-
-
-
-int getUserOption(){
-        int userOption;
-        std::cout << "Type in 1-6 " << std::endl;
-        std::cin >> userOption;
-        std::cout << "You chose:" << userOption << std::endl;
-        return userOption;
-}
-
-
-void processUserOption(int userOption){
-        if(userOption == 0){
-        std::cout << "Invalid choice. Choose 1-6" << std::endl;
-        }
-        if(userOption == 1){
-        printHelp();
-        }
-        if(userOption == 2){
-        printMarketStats();
-        }
-        if(userOption == 3){
-        enterOffer();
-        }
-        if(userOption == 4){
-                enterBid();
-        }
-        if(userOption == 5){
-                printWallet();
-        }
-        if(userOption == 6){
-                goToNextTimeFrame();
-        }
-
-}
 
 int main()
 {
+        MerkelMain app{};
+        app.init();
+
+}
+
+
         // double price = 5319.450228;
         // double amount = 0.00020075;
         // // This is declaring a new variable and the type is standard String but the syntax to define is std::string
@@ -132,16 +52,15 @@ int main()
         //we've created a vector of type that can store multiple order book entries and we called it orders, 
         // then we created a variable, and we've chucked that, passed a variable onto the vector.         orders.push_back(order1);
 
-        std::vector<OrderBookEntry> orders;
+        // std::vector<OrderBookEntry> orders;
 
-        // This order1 is an object that is an insatnce of the class OrderBookEntry
-        // OrderBookEntry order1{10000,0.002 , "2020/03/17 17:01:24.884492", "BTC/USDT", OrderBookType::bid};
+        // // This order1 is an object that is an insatnce of the class OrderBookEntry
+        // // OrderBookEntry order1{10000,0.002 , "2020/03/17 17:01:24.884492", "BTC/USDT", OrderBookType::bid};
 
-        orders.push_back(OrderBookEntry {10000,0.002 , "2020/03/17 17:01:24.884492", "BTC/USDT", OrderBookType::bid});
+        // orders.push_back(OrderBookEntry {10000,0.002 , "2020/03/17 17:01:24.884492", "BTC/USDT", OrderBookType::bid});
         
-        for (unsigned int i = 0; i < orders.size() ; ++i)
-        {
-                std::cout << "The price is" <<orders.at(i).price << std::endl;
-        }
+        // for (unsigned int i = 0; i < orders.size() ; ++i)
+        // {
+        //         std::cout << "The price is" <<orders.at(i).price << std::endl;
+        // }
 
-}

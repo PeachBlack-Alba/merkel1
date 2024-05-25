@@ -1,3 +1,4 @@
+// This file contains the specification
 #include <string>
 
         enum class OrderBookType{bid, ask}; 
@@ -12,18 +13,7 @@
                         double _amount,
                         std::string _timestamp,
                         std::string _product,
-                        OrderBookType _orderType)
-                // initialisation list
-                : price(_price),
-                amount(_amount),
-                timestamp(_timestamp),
-                product(_product),
-                orderType(_orderType)
-
-                {
-        
-                }
-
+                        OrderBookType _orderType);
                 double price;
                 double amount;
                 std::string timestamp;
