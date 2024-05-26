@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 std::vector<std::string> tokenise(std::string csvLine, char separator)
 {
@@ -40,5 +41,40 @@ std::vector<std::string> tokenise(std::string csvLine, char separator)
 
 int main()
 {
+        // std::vector<std::string> tokens;
+        // std::string s = "2020/03/17 17:01:24.884492,ETH/BTC,bid,0.02187308,7.44564869";
+        // tokens = tokenise(s, ',');
+
+        // for (std::string& t : tokens)
+        // {
+        //     std::cout << t<< std::endl;
+        // }
+
+        // This is an object
+        // This should open the data file
+        std::ifstream csvFile{"20200317.csv"};
+        std::string line;
+
+        if(csvFile.is_open())
+        {
+            std::cout << "File open" << std::endl;
+
+            // Read one line form data file
+            // std::getline(csvFile, line);
+            // std::cout << "Read line" << line << std::endl;
+
+            // Use a loop to keep reading 
+            // getline returns true or false
+            while (std::getline(csvFile, line))
+            {
+            std::cout << "Read line" << line << std::endl;
+            }
+            csvFile.close();
+        } else {
+            std::cout << "Could not open file" << std::endl;
+        }
+
+
+
     return 0;
 }
