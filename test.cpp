@@ -54,6 +54,8 @@ int main()
         // This should open the data file
         std::ifstream csvFile{"20200317.csv"};
         std::string line;
+        std::vector<std::string> tokens;
+
 
         if(csvFile.is_open())
         {
@@ -68,6 +70,18 @@ int main()
             while (std::getline(csvFile, line))
             {
             std::cout << "Read line" << line << std::endl;
+            tokens = tokenise(line, ','); 
+            if (tokens.size() != 5) // bad 
+            {
+                std::cout << "Bad line" << std::endl;
+                continue;
+            }
+            // we have 5 toekns 
+            double price = std::stod(tokens[3]);
+            double amount = std::stod(tokens[4]);
+
+            std::cout << price << ":" << amount << std::endl;
+           
             }
             csvFile.close();
         } else {
