@@ -77,10 +77,19 @@ int main()
                 continue;
             }
             // we have 5 toekns 
-            double price = std::stod(tokens[3]);
-            double amount = std::stod(tokens[4]);
+            
+            // add exceptions 
+            try{
+                double price = std::stod(tokens[3]);
+                double amount = std::stod(tokens[4]);
+                std::cout << price << ":" << amount << std::endl;
 
-            std::cout << price << ":" << amount << std::endl;
+            }catch(std::exception& e)
+            {
+                std::cout << "Bad float!" << tokens[3]<< std::endl;
+                std::cout << "Bad float!" << tokens[4]<< std::endl;
+            }
+
            
             }
             csvFile.close();
