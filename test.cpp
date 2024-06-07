@@ -91,6 +91,7 @@ int main()
             {
                 std::cout << "Bad float!" << tokens[3] << std::endl;
                 std::cout << "Bad float!" << tokens[4] << std::endl;
+                break;
             }
         }
         csvFile.close();
