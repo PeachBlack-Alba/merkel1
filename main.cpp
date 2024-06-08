@@ -1,17 +1,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
-//#include "OrderBookEntry.h"
+#include "OrderBookEntry.h"
 #include "MerkelMain.h"
 #include "CSVReader.h"
 
 
 int main()
 {
-        //MerkelMain app{};
-        //app.init();
-        //CSVReader reader;
-        CSVReader::readCSV("20200317.csv");
+        MerkelMain app{};
+        app.init();
+        //CSVReader::readCSV("20200317.csv");
 
 }
 
